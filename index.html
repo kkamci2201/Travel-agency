@@ -71,6 +71,25 @@
             text-align: center;
             padding: 20px;
         }
+        .lang-en {
+            display: none;
+        }
+        #language-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #language-popup .popup-content {
+            background: white;
+            padding: 20px;
+            text-align: center;
+        }
         @media (max-width: 768px) {
             .card {
                 width: calc(50% - 20px);
@@ -90,102 +109,142 @@
     </style>
 </head>
 <body>
+    <div id="language-popup">
+        <div class="popup-content">
+            <p>언어를 선택해 주세요 / Please choose a language</p>
+            <button id="btn-korean">한국어</button>
+            <button id="btn-english">English</button>
+        </div>
+    </div>
     <header>
-        <h1>여행사 Travel Agency</h1>
+        <h1><span class="lang-ko">여행사</span> <span class="lang-en">Travel Agency</span></h1>
         <nav>
             <ul>
-                <li><a href="#">홈 Home</a></li>
-                <li><a href="#destinations">목적지 Destinations</a></li>
-                <li><a href="#deals">할인 Deals</a></li>
-                <li><a href="#contact">연락처 Contact</a></li>
+                <li><a href="#"><span class="lang-ko">홈</span> <span class="lang-en">Home</span></a></li>
+                <li><a href="#destinations"><span class="lang-ko">목적지</span> <span class="lang-en">Destinations</span></a></li>
+                <li><a href="#deals"><span class="lang-ko">할인</span> <span class="lang-en">Deals</span></a></li>
+                <li><a href="#contact"><span class="lang-ko">연락처</span> <span class="lang-en">Contact</span></a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <h2>Explore the World with Us / 함께 떠나는 여행</h2>
+        <h2><span class="lang-ko">함께 떠나는 여행</span> <span class="lang-en">Explore the World with Us</span></h2>
         <div class="search-form">
-            <input list="destination-list" placeholder="목적지 Destination" />
+            <input list="destination-list" placeholder="목적지" class="lang-ko" />
+            <input list="destination-list" placeholder="Destination" class="lang-en" />
             <input type="date" />
             <input type="date" />
-            <input type="number" placeholder="인원 Guests" />
-            <button>검색</button>
+            <input type="number" placeholder="인원" class="lang-ko" />
+            <input type="number" placeholder="Guests" class="lang-en" />
+            <button class="lang-ko">검색</button>
+            <button class="lang-en">Search</button>
             <datalist id="destination-list">
-                <option value="서울 Seoul"></option>
-                <option value="부산 Busan"></option>
-                <option value="제주 Jeju"></option>
+                <option value="서울"></option>
+                <option value="부산"></option>
+                <option value="제주"></option>
             </datalist>
-            <p><a href="#">AI 여행 컨설턴트 Chat with AI</a></p>
+            <p><a href="#"><span class="lang-ko">AI 여행 컨설턴트</span> <span class="lang-en">Chat with AI</span></a></p>
         </div>
     </section>
 
     <section id="destinations" class="section">
-        <h3>추천 여행지 Featured Destinations</h3>
+        <h3><span class="lang-ko">추천 여행지</span> <span class="lang-en">Featured Destinations</span></h3>
         <div class="destinations">
             <div class="card">
                 <img src="https://example.com/destination1.jpg" alt="Destination 1">
                 <div class="card-body">
-                    <h4>여행지 1 Destination 1</h4>
-                    <p>간단한 설명 Brief info</p>
-                    <button>지금 예약</button>
+                    <h4><span class="lang-ko">여행지 1</span> <span class="lang-en">Destination 1</span></h4>
+                    <p><span class="lang-ko">간단한 설명</span> <span class="lang-en">Brief info</span></p>
+                    <button class="lang-ko">지금 예약</button>
+                    <button class="lang-en">Book Now</button>
                 </div>
             </div>
             <div class="card">
                 <img src="https://example.com/destination2.jpg" alt="Destination 2">
                 <div class="card-body">
-                    <h4>여행지 2 Destination 2</h4>
-                    <p>간단한 설명 Brief info</p>
-                    <button>지금 예약</button>
+                    <h4><span class="lang-ko">여행지 2</span> <span class="lang-en">Destination 2</span></h4>
+                    <p><span class="lang-ko">간단한 설명</span> <span class="lang-en">Brief info</span></p>
+                    <button class="lang-ko">지금 예약</button>
+                    <button class="lang-en">Book Now</button>
                 </div>
             </div>
             <div class="card">
                 <img src="https://example.com/destination3.jpg" alt="Destination 3">
                 <div class="card-body">
-                    <h4>여행지 3 Destination 3</h4>
-                    <p>간단한 설명 Brief info</p>
-                    <button>지금 예약</button>
+                    <h4><span class="lang-ko">여행지 3</span> <span class="lang-en">Destination 3</span></h4>
+                    <p><span class="lang-ko">간단한 설명</span> <span class="lang-en">Brief info</span></p>
+                    <button class="lang-ko">지금 예약</button>
+                    <button class="lang-en">Book Now</button>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="deals" class="section">
-        <h3>특가 및 프로모션 Deals & Promotions</h3>
+        <h3><span class="lang-ko">특가 및 프로모션</span> <span class="lang-en">Deals & Promotions</span></h3>
         <div class="deals">
             <div class="card">
                 <img src="https://example.com/deal1.jpg" alt="Deal 1">
                 <div class="card-body">
-                    <h4>Deal 1 할인</h4>
-                    <p>할인 설명 Discount details</p>
-                    <button>예약하기</button>
+                    <h4><span class="lang-ko">Deal 1 할인</span> <span class="lang-en">Deal 1</span></h4>
+                    <p><span class="lang-ko">할인 설명</span> <span class="lang-en">Discount details</span></p>
+                    <button class="lang-ko">예약하기</button>
+                    <button class="lang-en">Book</button>
                 </div>
             </div>
             <div class="card">
                 <img src="https://example.com/deal2.jpg" alt="Deal 2">
                 <div class="card-body">
-                    <h4>Deal 2 할인</h4>
-                    <p>할인 설명 Discount details</p>
-                    <button>예약하기</button>
+                    <h4><span class="lang-ko">Deal 2 할인</span> <span class="lang-en">Deal 2</span></h4>
+                    <p><span class="lang-ko">할인 설명</span> <span class="lang-en">Discount details</span></p>
+                    <button class="lang-ko">예약하기</button>
+                    <button class="lang-en">Book</button>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="section">
-        <h3>고객 후기 Customer Reviews</h3>
+        <h3><span class="lang-ko">고객 후기</span> <span class="lang-en">Customer Reviews</span></h3>
         <blockquote>
-            "멋진 여행을 경험했습니다! Great trip!" - 고객 A
+            <span class="lang-ko">"멋진 여행을 경험했습니다!" - 고객 A</span>
+            <span class="lang-en">"Great trip!" - Customer A</span>
         </blockquote>
     </section>
 
     <section class="section cta">
-        <h3>지금 여행 계획하기 Start Planning Now</h3>
-        <button>예약 문의</button>
+        <h3><span class="lang-ko">지금 여행 계획하기</span> <span class="lang-en">Start Planning Now</span></h3>
+        <button class="lang-ko">예약 문의</button>
+        <button class="lang-en">Contact Us</button>
     </section>
 
     <footer>
-        <p id="contact">연락처 Contact: info@example.com</p>
+        <p id="contact"><span class="lang-ko">연락처:</span> <span class="lang-en">Contact:</span> info@example.com</p>
         <p>© 2024 Travel Agency</p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var popup = document.getElementById('language-popup');
+            var btnEng = document.getElementById('btn-english');
+            var btnKor = document.getElementById('btn-korean');
+
+            btnEng.addEventListener('click', function() {
+                document.querySelectorAll('.lang-ko').forEach(function(el) {
+                    el.style.display = 'none';
+                });
+                document.querySelectorAll('.lang-en').forEach(function(el) {
+                    el.style.display = '';
+                });
+                document.documentElement.lang = 'en';
+                popup.style.display = 'none';
+            });
+
+            btnKor.addEventListener('click', function() {
+                popup.style.display = 'none';
+            });
+        });
+    </script>
 </body>
 </html>
